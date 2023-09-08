@@ -88,7 +88,7 @@ public class User_Controller {
 				     //	return new ResponseEntity<>(HttpStatus.NO_CONTENT);   OR
 					throw new ResourceNotFoundException("No data found");
 				}
-			
+			LOGGER.info("List of All Users");
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		}
 
