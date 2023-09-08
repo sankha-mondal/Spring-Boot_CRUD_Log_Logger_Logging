@@ -100,7 +100,7 @@ public class User_Controller {
 		@GetMapping("/getUserByEmail/{uEmail}")
 		public ResponseEntity<User> getUserByEmail(@PathVariable("uEmail") String uEmail) {
 			
-			LOGGER.info("Finding User By PK: "+uEmail);
+			LOGGER.info("Finding User of PK: "+uEmail);
 			User user = userRepo.findById(uEmail)
 					.orElseThrow(() -> new ResourceNotFoundException("Not found User with Email = " + uEmail));
 			
@@ -222,7 +222,7 @@ public class User_Controller {
 		@GetMapping("/getUserByName/{uName}")
 		public ResponseEntity<User> getUserByName(@PathVariable("uName") String uName) {
 
-			LOGGER.info("Finding by Name: "+uName);
+			LOGGER.info("Finding user by Name: "+uName);
 			User user = userRepo.findUserByuNameIgnoreCase(uName);
 			if(user == null) {
 				throw new ResourceNotFoundException("Not found User with name = " + uName);
@@ -240,7 +240,7 @@ public class User_Controller {
 		@GetMapping("/getUserByGender/{uGender}")
 		public ResponseEntity<List<User>> getUserByGender(@PathVariable("uGender") String uGender) {
 
-			LOGGER.info("Trying to find theList of "+uGender+" User");
+			LOGGER.info("Trying to find the List of "+uGender+" User");
 			List<User> users = userRepo.findUserByuGenderIgnoreCase(uGender);
 			if(users.isEmpty()) {
 				throw new ResourceNotFoundException(uGender + " Users are Not Available");
