@@ -80,7 +80,7 @@ public class User_Controller {
 		@GetMapping("/getAll")
 		public ResponseEntity<List<User>> getAllUser() {
 
-			    LOGGER.info("Finding All Users");
+			LOGGER.info("Finding All Users");
 				List<User> user = new ArrayList<User>();
 				userRepo.findAll().forEach(user::add);
 	
@@ -176,7 +176,7 @@ public class User_Controller {
 
 				userRepo.deleteById(uEmail);
 				
-				LOGGER.info("User Datails of Email: "+uEmail+", Deleted Successfully... ");
+			   LOGGER.info("User Datails of Email: "+uEmail+", Deleted Successfully... ");
 			// return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			   return new ResponseEntity<ApiResponse>(new ApiResponse("User details deleted Successfully", true), HttpStatus.OK);
 		}
