@@ -81,13 +81,13 @@ public class User_Controller {
 		public ResponseEntity<List<User>> getAllUser() {
 
 			LOGGER.info("Finding All Users");
-				List<User> user = new ArrayList<User>();
-				userRepo.findAll().forEach(user::add);
-	
-				if (user.isEmpty()) {
-				     //	return new ResponseEntity<>(HttpStatus.NO_CONTENT);   OR
-					throw new ResourceNotFoundException("No data found");
-				}
+			List<User> user = new ArrayList<User>();
+			userRepo.findAll().forEach(user::add);
+
+			if (user.isEmpty()) {
+			     //	return new ResponseEntity<>(HttpStatus.NO_CONTENT);   OR
+				throw new ResourceNotFoundException("No data found");
+			}
 			LOGGER.info("List of All Users");
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		}
@@ -189,9 +189,9 @@ public class User_Controller {
 		@DeleteMapping("/deleteAll")
 		public ResponseEntity<HttpStatus> deleteAllUser() {
 
-				userRepo.deleteAll();
+			userRepo.deleteAll();
     
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		    	return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 
  
