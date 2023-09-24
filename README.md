@@ -6,3 +6,5 @@ Steps:
 3) import org.slf4j.LoggerFactory;
 4) Apply Logger in Controller methods.
 
+PN: No dependency is required to apply for Logger mechanism.
+
